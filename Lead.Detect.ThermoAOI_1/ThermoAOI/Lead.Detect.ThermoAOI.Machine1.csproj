@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B43E31C6-1F33-4EAF-AAD0-91943AA90C1B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lead.Detect.ThermoAOI.Machine1</RootNamespace>
+    <AssemblyName>Lead.Detect.ThermoAOI.Machine1</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Lead.Detect.ThermoAOI.Machine1.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>lead.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dos.ORM, Version=1.15.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Dos.ORM.1.15.0\lib\net40\Dos.ORM.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="geometry3Sharp, Version=1.0.289.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\geometry3Sharp.1.0.289\lib\net45\geometry3Sharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="lcpi.data.oledb.net4_5_1, Version=1.8.0.3545, Culture=neutral, PublicKeyToken=ff716095e8002e7e, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\lcpi.data.oledb.1.8.0.3545\lib\net451\lcpi.data.oledb.net4_5_1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="lcpi.lib.net4_5_1, Version=2.2.0.1687, Culture=neutral, PublicKeyToken=ff716095e8002e7e, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\lcpi.lib.2.2.0.1687\lib\net451\lcpi.lib.net4_5_1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.1.6643.41644, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WeifenLuo.WinFormsUI.Docking.2.1.0\lib\net20\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calibration\AutoPlatformHeightCalib.cs" />
+    <Compile Include="Calibration\AutoPlatformProduct2UpCalib.cs" />
+    <Compile Include="Calibration\GTTransform.cs" />
+    <Compile Include="Calibration\AutoPlatformUp2DownAlignCalib.cs" />
+    <Compile Include="Common\BarcodeHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserDefine\MachineSafeChecks.cs" />
+    <Compile Include="UserDefine\newTasks\newMeasureDownTask.cs" />
+    <Compile Include="UserDefine\newTasks\newMeasureUpTask.cs" />
+    <Compile Include="UserDefine\newTasks\newTransTask.cs" />
+    <Compile Include="Common\KeyenceGT.cs" />
+    <Compile Include="VersionHelper\FlatnessFprjConvert.cs" />
+    <Compile Include="VersionHelper\PlatformConvert.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="View\DevMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DevMainForm.Designer.cs">
+      <DependentUpon>DevMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DevConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DevConfigForm.Designer.cs">
+      <DependentUpon>DevConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calibration\CalibrationConfig.cs" />
+    <Compile Include="UserDefine\CommonConfig.cs" />
+    <Compile Include="UserDefine\Machine.cs" />
+    <Compile Include="UserDefine\MachineSettings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DevMainForm.resx">
+      <DependentUpon>DevMainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DevConfigForm.resx">
+      <DependentUpon>DevConfigForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Config2\default.db" />
+    <None Include="Config2\default.dev" />
+    <None Include="Config2\devsim.dev" />
+    <None Include="Config2\LeftCarrier.pts" />
+    <None Include="Config2\LeftDown.pts" />
+    <None Include="Config2\LeftUp.pts" />
+    <None Include="Config2\machine.cfg" />
+    <None Include="Config2\machinesim.cfg" />
+    <None Include="Config2\p1.pts" />
+    <None Include="Config2\RightCarrier.pts" />
+    <None Include="Config2\RightDown.pts" />
+    <None Include="Config2\RightUp.pts" />
+    <None Include="Config2\Settings.cfg" />
+    <None Include="Config\Calculators\A117FullModule.calc" />
+    <None Include="Config\Calculators\A117VC.calc" />
+    <None Include="Config\Calculators\A147FullModule.calc" />
+    <None Include="Config\Calculators\A147VC.calc" />
+    <None Include="Config\Calculators\X1311FullModule.calc" />
+    <None Include="Config\framework.cfg" />
+    <None Include="Config\LeftCarrier.dat" />
+    <None Include="Config\LeftDown.dat" />
+    <None Include="Config\LeftUp.dat" />
+    <None Include="Config\default.db" />
+    <None Include="Config\default.dev" />
+    <None Include="Config\devsim.dev" />
+    <None Include="Config\LeftCarrier.pts" />
+    <None Include="Config\LeftDown.pts" />
+    <None Include="Config\LeftUp.pts" />
+    <None Include="Config\machine.cfg" />
+    <None Include="Config\machinesim.cfg" />
+    <None Include="Config\P2 201811\A117-module-V13-pf-30-ordered.mprj" />
+    <None Include="Config\P2 201811\A117-module-V13-pf-30.mprj" />
+    <None Include="Config\P2 201811\A117-module-V13-pf-32.mprj" />
+    <None Include="Config\P2 201811\A117-module-V13.mprj" />
+    <None Include="Config\P2 201811\A117-vc-V13-pf-30-grr-ordered.mprj" />
+    <None Include="Config\P2 201811\A117-vc-V13-pf-30-ordered.mprj" />
+    <None Include="Config\P2 201811\A117-vc-V13-pf-32.mprj" />
+    <None Include="Config\P2 201811\A117-vc-V13.mprj" />
+    <None Include="Config\P2 201811\A147-module-V10-ordered-height65.mprj" />
+    <None Include="Config\P2 201811\A147-module-V10-ordered.mprj" />
+    <None Include="Config\P2 201811\A147-module-V10.mprj" />
+    <None Include="Config\P2 201811\A147-vc-V10-ordered.mprj" />
+    <None Include="Config\P2 201811\A147-vc-V10.mprj" />
+    <None Include="Config\P2 201811\X1311-module-V7.mprj" />
+    <None Include="Config\p2 spec.md" />
+    <None Include="Config\platforms.pts" />
+    <None Include="Config\RightCarrier.dat" />
+    <None Include="Config\RightCarrier.pts" />
+    <None Include="Config\RightDown.dat" />
+    <None Include="Config\RightDown.pts" />
+    <None Include="Config\RightUp.dat" />
+    <None Include="Config\RightUp.pts" />
+    <None Include="Config\Settings.cfg" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BASE\Lead.Detect.Base\Helper\Lead.Detect.Helper.csproj">
+      <Project>{5ec85808-3bda-4849-b36e-e5eb705016ec}</Project>
+      <Name>Lead.Detect.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BASE\Lead.Detect.Extension\DatabaseHelper\Lead.Detect.DatabaseHelper.csproj">
+      <Project>{6ea6d1fd-7d09-4d17-ad94-4e6711054de0}</Project>
+      <Name>Lead.Detect.DatabaseHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BASE\Lead.Detect.Base\Element\Lead.Detect.Element.csproj">
+      <Project>{d900d7e5-35cc-4210-b7cc-d20836674c07}</Project>
+      <Name>Lead.Detect.Element</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BASE\Lead.Detect.Base\Interfaces.Dev\Lead.Detect.Interfaces.Dev.csproj">
+      <Project>{e74db80e-8d89-455b-8c17-54841a6ef155}</Project>
+      <Name>Lead.Detect.Interfaces.Dev</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BASE\Lead.Detect.Base\PrimBase\Lead.Detect.PrimBase.csproj">
+      <Project>{578a4cf5-6c49-494d-a02e-22bc62ecb44c}</Project>
+      <Name>Lead.Detect.PrimBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BASE\Lead.Detect.Extension\FrameworkExtension\Lead.Detect.FrameworkExtension.csproj">
+      <Project>{463f8ee2-5570-40aa-9f85-58473def51fc}</Project>
+      <Name>Lead.Detect.FrameworkExtension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BASE\Lead.Detect.Extension\MachineUtilityLib\Lead.Detect.MachineUtilityLib.csproj">
+      <Project>{195d7e78-9e4c-4575-a82e-582f378674ea}</Project>
+      <Name>Lead.Detect.MachineUtilityLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BASE\Lead.Detect.Extension\Utility\Lead.Detect.Utility.csproj">
+      <Project>{1ec60b75-6689-47e1-be8c-63a7ab3325e0}</Project>
+      <Name>Lead.Detect.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lead.Detect.ThermoAOITrajectoryLib\Lead.Detect.ThermoAOITrajectoryLib.csproj">
+      <Project>{b0ce046f-e89f-4a83-8ca1-25fb5c807e1b}</Project>
+      <Name>Lead.Detect.ThermoAOITrajectoryLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThermoAOIFlatnessCalcLib\Lead.Detect.ThermoAOIProductLib.csproj">
+      <Project>{4DC12809-3D6E-4A62-A9FC-3BA47DFDBE97}</Project>
+      <Name>Lead.Detect.ThermoAOIProductLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="APS168.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Config2\p2 spec.md" />
+    <Content Include="Config2\param0.xml" />
+    <Content Include="Config2\param1.xml" />
+    <Content Include="Config\param0.xml" />
+    <Content Include="Config\param1.xml" />
+    <Content Include="lead.ico" />
+    <Content Include="PCI-Dask64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config2\Calculators\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
